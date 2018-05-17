@@ -4,7 +4,7 @@ from ebaysdk.exception import ConnectionError
 keyword = input()
 
 try:
-    api = Finding(appid="ebay-appid", config_file=None)
+    api = Finding(config_file='config.py')
     response = api.execute('findItemsAdvanced', {'keywords': keyword})
     results = response.dict()
     items = results['searchResult']['item']
